@@ -3,40 +3,26 @@
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> <!--Per animzaioni-->
     </head>
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best;sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
+        vr-mode-ui="enabled: false;"
+        loading-screen="enabled: false;"
+        renderer="logarithmicDepthBuffer: true;"
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+        id="scene"
+        embedded
         >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-            </a-assets>
-
             <a-marker
-                id="animated-marker"
                 type="pattern"
                 preset="custom"
                 url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
             >
                 <a-entity
-                    id="bowser-model"
                     scale="0.002597338979924602 0.002597338979924602 0.002597338979924602"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
+                    gltf-model="assets/asset.gltf"
                 ></a-entity>
             </a-marker>
 
