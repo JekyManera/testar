@@ -33,14 +33,6 @@
         id="scene"
         embedded
         >
-
-        <a-assets>
-            <a-asset-item
-                id="animated-asset"
-                src="assets/asset.gltf"
-            ></a-asset-item>
-        </a-assets>
-
             <a-marker
                 markerhandler
                 type="pattern"
@@ -51,9 +43,8 @@
                 id="animated-marker"
             >
                 <a-entity
-                    id="animated-model"
                     scale="2"
-                    gltf-model=#animated-asset
+                    gltf-model="assets/asset.gltf"
                 ></a-entity>
             </a-marker>
 
