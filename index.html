@@ -1,28 +1,19 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> <!--Per animzaioni-->
-    </head>
-
-    <body style="margin: 0; overflow: hidden;">
-        
-        <a-scene
-        embedded arjs=’sourceType: webcam;’>
-            <a-marker
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-            >
-                <a-entity
-                    scale="0.002597338979924602 0.002597338979924602 0.002597338979924602"
-                    gltf-model=”url(assets/asset.gltf)”>
-                </a-entity>
-            </a-marker>
-
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
-</html>
+<a-scene cursor="rayOrigin: mouse" arjs="debugUIEnabled: false" style="margin: 0; padding: 0; width: 100%; height: 100%; position: absolute">
+   
+    <a-marker preset="hiro">
+       <a-box scale="1 0.25 1" opacity="0.5"
+              event-set__mouseenter="color: red"
+              event-set__mouseleave="color: white"
+              event-set__mousedown="color: green"
+              event-set__mouseup="color: red"
+              animation="property: rotation; from: 0 0 0; to: 0 360 0; dur: 1000; startEvents: click"
+              navigate-on-click="url: https://www.google.com/">
+          
+       </a-box>
+ 
+    </a-marker>
+ 
+    <a-entity camera>
+    </a-entity>
+ </a-scene>
 
