@@ -26,8 +26,8 @@
                 id="animated-marker"
                 type="pattern"
                 preset="custom"
-                raycaster="objects: .clickable"
                 url="assets/marker.patt"
+                raycaster="objects: .clickable"
                 emitevents="true"
                 cursor="fuse: false; rayOrigin: mouse;"
             >
@@ -35,6 +35,8 @@
                     id="bowser-model"
                     scale="0.002597338979924602 0.002597338979924602 0.002597338979924602"
                     gltf-model="#animated-asset"
+                    class="clickable"
+                    gesture-handler
                 ></a-entity>
             </a-marker>
 
